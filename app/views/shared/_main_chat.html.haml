@@ -1,0 +1,44 @@
+.chat-main
+  .chat-main__info
+    .chat-main__info__boxleft
+      %h2.chat-main__info__boxleft__group-name 
+        test
+      %ul.chat-main__info__boxleft__member-list
+        Member : masa
+        %li.chat-main__info__boxleft__member-list__member-name
+    =link_to "#" do
+      .chat-main__info__boxright
+        Edit
+
+
+  .chat-main__list
+    .chat-main__list__box
+      .chat-main__list__box__group 
+        %p.chat-main__list__box__group__myname
+          masa
+        %p.chat-main__list__box__group__date
+          2019/11/20(Wed) 17:43:01
+      %p.chat-main__list__box__message
+          おはよう
+       
+    .chat-main__list__box
+      .chat-main__list__box__group 
+        %p.chat-main__list__box__group__myname
+          masa
+        %p.chat-main__list__box__group__date
+          2019/11/20(Wed) 17:43:01
+      %p.chat-main__list__box__message
+          おはよう
+  
+  
+  
+  
+  .chat-main__form
+    %form.chat-main__form__new-massage
+      .chat-main__form__new-massage__input-box
+        %input.chat-main__form__new-massage__input-box__text(type="")
+        %label.chat-main__form__new-massage__input-box__label{class: "input-box__image"}
+          = icon('far','image')
+          %input.chat-main__form__new-massage__input-box__text__label__none(type="file" name="message[image]" style="display:none;")/
+      %input.chat-main__form__new-massage__send(type="submit" value="Send")/
+      
