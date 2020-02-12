@@ -5,42 +5,17 @@
         = current_user.name
       %ul.side-bar__name__text__icon
         %li.side-bar__name__text__icon__newgroup 
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fa','edit')
         %li.side-bar__name__text__icon__create 
-          = link_to edit_user_path(current_user) do
+          = link_to edit_user_path(current_user.id) do
             = icon('fa','cog',class: 'icon')
 
   .side-bar__group
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません    
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません    
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません    
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません    
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません    
-    = link_to "#" do
-      .side-bar__group__box
-        %p.side-bar__group__box__name techcamp
-        %p.side-bar__group__box__message まだメッセージがありません
+    - current_user.groups.each do |group|
+      = link_to "#" do
+        .side-bar__group__box
+          %p.side-bar__group__box__name
+          =group.name
+          %p.side-bar__group__box__message まだメッセージがありません
+    
